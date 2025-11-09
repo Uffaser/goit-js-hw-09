@@ -41,12 +41,9 @@ feedbackFormEl.addEventListener('submit', e => {
         alert('Fill please all fields');
     } else {
         console.log(formData);
+        formData.email = '';
+        formData.message = '';
+        localStorage.removeItem('feedback-form-state');
+        feedbackFormEl.reset();
     }
-
-    formData.email = '';
-    formData.message = '';
-
-    localStorage.removeItem('feedback-form-state');
-
-    feedbackFormEl.reset();
 });
